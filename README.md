@@ -1,7 +1,8 @@
 # my_app
-Androir Studio project.
+Android Studio project. <br>
 
-GPS stack overflow ctrl+c ctrl+v
+Tasklist: <br>
+https://trello.com/b/1xaxsIY6/komputer-pokladowy <br>
 
-Easiest way to clone:
+Easiest way to clone: <br>
 File -> New -> Project from version control -> GitHub -> feed Android Studio with address to this repo
