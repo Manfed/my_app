@@ -1,10 +1,9 @@
-package com.example.jakub.myapplication;
+package pg.eti.inz.main;
 
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
-import android.location.LocationListener;
 import android.location.LocationManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.example.jakub.myapplication.back.LocationProvider;
+import pg.eti.inz.main.back.LocationProvider;
 
 public class MainActivity extends AppCompatActivity {
 

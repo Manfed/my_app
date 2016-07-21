@@ -1,10 +1,8 @@
-package com.example.jakub.myapplication.back;
+package pg.eti.inz.main.back;
 
 import android.location.Location;
 import android.location.LocationListener;
 import android.util.Log;
-
-import com.example.jakub.myapplication.back.LocationListenerImpl;
 
 /**
  * Created by jakub on 21.07.16.

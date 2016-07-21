@@ -1,4 +1,4 @@
-package com.example.jakub.myapplication;
+package pg.eti.inz.main;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

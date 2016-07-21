@@ -1,4 +1,4 @@
-package com.example.jakub.myapplication.back;
+package pg.eti.inz.main.back;
 
 import android.location.Location;
 import android.location.LocationListener;
