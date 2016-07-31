@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="pg.eti.inz.eti.projekt_inz.MainActivity"
+    tools:context="pg.eti.inz.MainActivity"
     tools:showIn="@layout/activity_main">
 
     <TextView
