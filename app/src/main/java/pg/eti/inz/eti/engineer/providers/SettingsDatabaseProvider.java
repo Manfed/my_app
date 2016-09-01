@@ -21,7 +21,6 @@ import pg.eti.inz.eti.engineer.utils.Constants;
 public class SettingsDatabaseProvider extends SQLiteOpenHelper {
 
     private static final Logger LOGGER = Logger.getLogger(SettingsDatabaseProvider.class.getName());
-    private SQLiteDatabase database;
 
     public SettingsDatabaseProvider(Context context) {
         super(context, Constants.DATABASE_NAME, null, 1);
@@ -44,7 +43,7 @@ public class SettingsDatabaseProvider extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("create table if not exists" + Constants.OPTIONS_DATABASE_TABLE +
                 "(id integer primary key, " + Constants.OPTIONS_DB_NAME_COLUMN + " text unique, " +
-                Constants.OPTIONS_DB_VALUE_COLUMN + " text);"
+                Constants.OPTIONS_DB_VALUE_COLUMN + " text, " + Constants.OPTIONS_DB_TYPE_COLUMN +" text);"
         );
     }
 
@@ -63,7 +62,8 @@ public class SettingsDatabaseProvider extends SQLiteOpenHelper {
 
         while (!cursor.isAfterLast()) {
             options.add(new Option(cursor.getString(cursor.getColumnIndex(Constants.OPTIONS_DB_NAME_COLUMN)),
-                    cursor.getString(cursor.getColumnIndex(Constants.OPTIONS_DB_VALUE_COLUMN))));
+                    cursor.getString(cursor.getColumnIndex(Constants.OPTIONS_DB_VALUE_COLUMN)),
+                    cursor.getString(cursor.getColumnIndex(Constants.OPTIONS_DB_TYPE_COLUMN))));
             cursor.moveToNext();
         }
 
@@ -79,6 +79,7 @@ public class SettingsDatabaseProvider extends SQLiteOpenHelper {
 
         for (Option option : options) {
             contentValues.put(option.getName(), option.getValue());
+            contentValues.put(option.getName(), option.getType());
             updatedRows += sqLiteDatabase.update(Constants.OPTIONS_DATABASE_TABLE, contentValues,
                     Constants.OPTIONS_DB_NAME_COLUMN + "= ?", new String[] {option.getName()});
 

@@ -14,6 +14,7 @@ public class Constants {
     //Nazwy kolumn w tabeli z ustawieniami
     public static final String OPTIONS_DB_NAME_COLUMN = "name";
     public static final String OPTIONS_DB_VALUE_COLUMN = "value";
+    public static final String OPTIONS_DB_TYPE_COLUMN = "type";
 
     private Constants() {}
 }
