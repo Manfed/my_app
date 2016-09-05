@@ -1,37 +1,28 @@
 package pg.eti.inz.eti.engineer.settings.listeners;
 
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.view.View;
 import android.widget.AdapterView;
 
 import java.util.Locale;
+
+import pg.eti.inz.eti.engineer.settings.utils.locale.ActiveLocale;
+import pg.eti.inz.eti.engineer.settings.utils.locale.LocaleManager;
 
 /**
  * Listener for language spinner in settings
  */
 public class LanguageOnItemSelectedListener implements AdapterView.OnItemSelectedListener {
 
-    private final String POLISH = "Polski";
-    private final String ENGLISH = "English";
-    private final String POLISH_LOCALE = "pl";
-    private final String ENGLISH_LOCALE = "en";
-
     public LanguageOnItemSelectedListener() {}
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-        Configuration config = new Configuration();
+        LocaleManager localeManager = new LocaleManager();
+        Locale locale = localeManager.recognizeLocaleByLanguageName(parent.getItemAtPosition(pos).toString());
 
-        switch (parent.getItemAtPosition(pos).toString()) {
-            case POLISH:
-                Locale locale = new Locale(POLISH_LOCALE);
-                config.locale = locale;
-                break;
-            case ENGLISH:
-                config.locale = Locale.ENGLISH;
-                break;
-        }
-        view.getResources().updateConfiguration(config, view.getResources().getDisplayMetrics());
+        ActiveLocale.getInstance(parent.getContext()).setActiveLocale(locale);
     }
 
     @Override
