@@ -2,3 +2,4 @@ language: java
 
 before_install:
     - sudo chmod +x ./gradlew
+    - sudo echo "sdk.dir=$ANDROID_HOME" > local.properties
