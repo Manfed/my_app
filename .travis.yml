@@ -2,6 +2,6 @@ language: android
 
 before_install:
     - sudo chmod +x ./gradlew
-    - echo y | sudo android update sdk -u -a -t android-23
+    - echo y | sudo android update sdk -u -a -t android-24
 
 script: ./gradlew clean build
