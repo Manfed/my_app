@@ -1,5 +1,9 @@
 language: android
 
+android:
+    components:
+        - android-24
+
 before_install:
     - sudo chmod +x ./gradlew
 
